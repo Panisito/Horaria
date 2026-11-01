@@ -6,26 +6,17 @@ class CtrlDocente {
         try {
             await db.conectar();
 
-            const sql = `INSERT INTO docente
-                (id_docente, nombre_docente, apellidos, carrera, especialidad, tipo_plaza, horas_a_la_semana,correo,contrasenia)
-                VALUES (?, ?, ?, ?, ?, ?, ?,?,?)`;
+            const sql = `INSERT INTO docente(carrera, especialidad, id_tipo_plaza, id_usuario)
+                VALUES (?, ?, ?, ?)`;
 
             const [resultado] = await db.conexion.execute(sql, [
-                docente.id,
-                docente.nombre,
-                docente.apellidos,
-                docente.carrera,
-                docente.especialidad,
-                docente.tipoPlaza,
-                docente.horasSemana,
-                docente.correo,
-                docente.contrasenia
+                docente.carrera ?? null,
+                docente.especialidad ?? null,
+                docente.idTipoPlaza ?? null,
+                docente.idUsuario
             ]);
 
-            return resultado.affectedRows > 0;
-        } catch (error) {
-            console.log('Error al guardar: ' + error.message);
-            return false;
+            return resultado.insertId;
         } finally {
             await db.cerrar();
         }

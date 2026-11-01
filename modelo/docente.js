@@ -1,14 +1,9 @@
 class Docente {
-    constructor(id, nombre, apellidos, carrera, especialidad, tipoPlaza, horasSemana,correo,contrasenia) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
+    constructor(carrera, especialidad, idTipoPlaza, idUsuario) {
         this.carrera = carrera;
         this.especialidad = especialidad;
-        this.tipoPlaza = tipoPlaza;
-        this.horasSemana = horasSemana;
-        this.correo=correo;
-        this.contrasenia=contrasenia;
+        this.idTipoPlaza = idTipoPlaza;
+        this.idUsuario = idUsuario;
     }
 }
 
