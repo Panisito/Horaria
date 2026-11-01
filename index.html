@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content ="IE=edge">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <title> MENU </title>
-    <link rel="stylesheet" href="estilos.css"> 
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="horario.css">
 </head>
 <body>
     <nav class="nav">
@@ -14,20 +15,19 @@
             <li class="list__item">
                 <div class="list__button">
                     <img src="assets/menu.svg" class="list__img">
-                <a href=# class="nav__link">Inicio</a>
+                <a href=# id="btn-inicio" class="nav__link">Inicio</a>
                 </div>
             </li>
 
         <li class="list__item">
                 <div class="list__button">
                     <img src="assets/id.svg" class="list__img">
-                <a href=# class="nav__link">Perfil</a>
+                <a href=# id="btn-perfil" class="nav__link">Perfil</a>
                 </div>
             </li>
 
-               
-
         <li class="list__item list_item--click">
+
             <div class="list__button list__button--click">
                 <img src="assets/calendarup.svg" class="list__img">
                 <a href="#" class="nav__link"> Horarios</a>
@@ -36,11 +36,11 @@
 
                 <ul class="list__show">
                     <li class="list__inside">
-                        <a href="#" class="nav__link nav__link--inside">Subir</a>
+                        <a href="#" id="btn-subir" class="nav__link nav__link--inside">Subir</a>
                     </li>
 
                      <li class="list__inside">
-                        <a href="#" class="nav__link nav__link--inside">Consultar</a>
+                        <a href="#" id="btn-consultar" class="nav__link nav__link--inside">Consultar</a>
                     </li>
 
                      <li class="list__inside">
@@ -52,36 +52,371 @@
                     <li class="list__item">
                 <div class="list__button">
                     <img src="assets/calendarescolar.svg" class="list__img">
-                <a href=# class="nav__link">Calendario Escolar</a>
+                <a href=# id="btn-calendario" class="nav__link">Calendario Escolar</a>
                 </div>
+
             </li>
-                    
+
                     <li class="list__item">
                 <div class="list__button">
                     <img src="assets/documents.svg" class="list__img">
-                <a href=# class="nav__link">Documentos</a>
+                <a href=# id="btn-documentos" class="nav__link">Documentos</a>
+                </div>
+            </li>
+
+                    <li class="list__item">
+                <div class="list__button">
+                    <img src="assets/search.svg" class="list__img">
+                <a href=# id="btn-todos" class="nav__link">Consultar</a>
                 </div>
             </li>
 
             <li class="list__item">
                 <div class="list__button">
                     <img src="assets/door.svg" class="list__img">
-                <a href=# class="nav__link">Cerrar sesion</a>
+                <a href="login.html" class="nav__link">Cerrar sesion</a>
                 </div>
             </li>
+        </ul>
+    </li>
+</nav>
 
-                    
-                </ul>
-        </li>
+<main id="inicio" class="contenido">
+    <div class="tarjeta bienvenida">
+        <div class="avatar avatar--chico">
+            <img id="i-img" alt="Foto del profesor" hidden>
+            <span id="i-iniciales"></span>
+        </div>
+        <div>
+            <p id="i-fecha" class="bienvenida__fecha"></p>
+            <h1 id="i-saludo"></h1>
+            <p id="i-categoria" class="perfil__sub"></p>
+        </div>
+    </div>
 
+    <div class="inicio__resumen">
+        <div class="tarjeta dato">
+            <span>Horas asignadas</span>
+            <strong id="i-horas">0</strong>
+        </div>
+        <div class="tarjeta dato">
+            <span>Grupos</span>
+            <strong id="i-grupos">0</strong>
+        </div>
+        <div class="tarjeta dato">
+            <span>Materias asignadas</span>
+            <strong id="i-materias">0</strong>
+        </div>
+    </div>
 
+    <div class="tarjeta">
+        <h2 class="consulta__titulo">Horario de hoy</h2>
+        <div id="i-hoy"></div>
+    </div>
 
-    </nav>
+    <div class="tarjeta">
+        <h2 class="consulta__titulo">Accesos rápidos</h2>
+        <div class="accesos">
+            <button id="i-ir-subir" class="acceso" type="button">
+                <img src="assets/calendarup.svg" alt="">
+                <div><strong>Subir horario</strong><span>Arma tu carga de horario</span></div>
+            </button>
+            <button id="i-ir-calendario" class="acceso" type="button">
+                <img src="assets/calendarescolar.svg" alt="">
+                <div><strong>Calendario escolar</strong><span>Septiembre 2026 – agosto 2027</span></div>
+            </button>
+            <button id="i-ir-documentos" class="acceso" type="button">
+                <img src="assets/documents.svg" alt="">
+                <div><strong>Documentos</strong><span>Imprime o guarda tu horario</span></div>
+            </button>
+        </div>
+    </div>
+</main>
 
+<main id="subir" class="contenido">
+    <header class="seccion__header">
+        <h1>Subir horario</h1>
+        <p>Elige tu materia y el aula, y después selecciona las horas en las que la impartirás.</p>
+    </header>
 
+    <div class="tarjeta">
 
+        <div class="formato__cab">
+            <h2>Horario de clase</h2>
+            <span>FO-TESH-39</span>
+        </div>
 
+        <div class="controles controles--corto">
+            <label>Programa Educativo
+                <select id="programa">
+                    <option>Ingeniería en Sistemas Computacionales</option>
+                </select>
+            </label>
+            <label>Semestre
+                <select id="semestre">
+                    <option value="1">1°</option>
+                    <option value="2">2°</option>
+                    <option value="3">3°</option>
+                    <option value="4">4°</option>
+                    <option value="5">5°</option>
+                    <option value="6">6°</option>
+                    <option value="7">7°</option>
+                    <option value="8">8°</option>
+                    <option value="9">9°</option>
+                </select>
+            </label>
+            <label>Grupo
+                <select id="grupo">
+                    <option>3153</option>
+                    <option>3154</option>
+                </select>
+            </label>
+            <label>Turno
+                <select id="turno">
+                    <option value="matutino">Matutino</option>
+                    <option value="vespertino" selected>Vespertino</option>
+                </select>
+            </label>
+            <label>Periodo
+                <input id="periodo" type="text" value="Sep 26 - Feb 28">
+            </label>
+        </div>
+
+        <div class="controles controles--corto">
+            <label>Profesor
+                <select id="profesor"></select>
+            </label>
+            <label>Materia
+                <select id="materia"></select>
+            </label>
+            <label>Aula / Laboratorio
+                <select id="aula">
+                    <optgroup label="Salones">
+                        <option value="J-1">J-1</option>
+                        <option value="J-2">J-2</option>
+                        <option value="J-3">J-3</option>
+                    </optgroup>
+                    <optgroup label="Laboratorios">
+                        <option value="LAB-1">LAB-1</option>
+                        <option value="LAB-2">LAB-2</option>
+                    </optgroup>
+                </select>
+            </label>
+        </div>
+
+        <div class="leyenda">
+            <span><i class="punto punto--libre"></i> Disponible</span>
+            <span><i class="punto punto--sel"></i> Tu selección</span>
+        </div>
+
+        <p id="aviso" class="aviso" role="alert"></p>
+
+        <div class="tabla-scroll">
+            <table class="horario">
+                <thead>
+                    <tr>
+                        <th>Horario</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-horario"></tbody>
+            </table>
+        </div>
+
+        <div class="tabla-scroll">
+            <table class="asignaturas">
+                <thead>
+                    <tr>
+                        <th>Grupo</th>
+                        <th>Asignaturas</th>
+                        <th>Horas</th>
+                        <th>Créditos</th>
+                        <th>Profesor</th>
+                        <th>No. emp.</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-asignaturas"></tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Total</td>
+                        <td class="num" id="total-horas-mat">0</td>
+                        <td colspan="3"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <div class="tarjeta resumen">
+        <div class="dato">
+            <span>Horas seleccionadas</span>
+            <strong id="total-horas">0</strong>
+        </div>
+        <div class="dato">
+            <span>Horas muertas</span>
+            <strong id="horas-muertas">0</strong>
+        </div>
+        <button id="guardar" class="btn" type="button">Guardar horario</button>
+    </div>
+</main>
+
+<main id="consultar" class="contenido">
+    <header class="seccion__header">
+        <h1>Consultar horario</h1>
+        <p>Aquí ves tu carga académica con las horas que seleccionaste en "Subir".</p>
+    </header>
+
+    <div class="tarjeta resumen">
+        <div class="dato">
+            <span>Profesor</span>
+            <strong id="c-nombre" class="dato__texto"></strong>
+        </div>
+        <div class="dato">
+            <span>Horas en total</span>
+            <strong id="c-total-horas">0</strong>
+        </div>
+        <div class="dato">
+            <span>Grupos</span>
+            <strong id="c-total-grupos">0</strong>
+        </div>
+    </div>
+
+    <div id="consulta-contenido"></div>
+</main>
+
+<main id="todos" class="contenido">
+    <header class="seccion__header">
+        <h1>Horarios de profesores</h1>
+        <p>Consulta la carga de horario de todos los profesores y descárgala en PDF.</p>
+    </header>
+
+    <div class="tarjeta resumen">
+        <div class="dato">
+            <span>Profesores con horario</span>
+            <strong id="t-profes">0/0</strong>
+        </div>
+        <div class="dato">
+            <span>Horas en total</span>
+            <strong id="t-horas">0</strong>
+        </div>
+        <div class="dato">
+            <span>Grupos</span>
+            <strong id="t-grupos">0</strong>
+        </div>
+    </div>
+
+    <div class="tarjeta">
+        <div class="controles controles--corto controles--sola">
+            <label>Buscar profesor
+                <input id="t-buscar" type="search" placeholder="Nombre o no. de empleado">
+            </label>
+            <label>Turno
+                <select id="t-turno">
+                    <option value="">Todos</option>
+                    <option value="matutino">Matutino</option>
+                    <option value="vespertino">Vespertino</option>
+                </select>
+            </label>
+            <button id="t-pdf" class="btn btn--enlace" type="button">Descargar PDF de todos</button>
+        </div>
+    </div>
+
+    <div id="todos-contenido"></div>
+</main>
+
+<main id="perfil" class="contenido">
+    <header class="seccion__header">
+        <h1>Mi perfil</h1>
+        <p>Información académica del profesor.</p>
+    </header>
+
+    <div class="tarjeta perfil">
+        <div class="perfil__foto">
+            <div class="avatar">
+                <img id="p-img" alt="Foto del profesor" hidden>
+                <span id="p-iniciales"></span>
+            </div>
+            <input type="file" id="p-archivo" accept="image/*" hidden>
+            <button id="p-subir" class="btn" type="button">Subir foto</button>
+            <button id="p-quitar" class="btn-texto" type="button" hidden>Quitar foto</button>
+            <p id="p-error" class="perfil__nota" role="alert"></p>
+        </div>
+
+        <div class="perfil__datos">
+            <h2 id="p-nombre"></h2>
+            <p id="p-categoria" class="perfil__sub"></p>
+            <div id="p-datos" class="rejilla"></div>
+        </div>
+    </div>
+
+    <div class="tarjeta">
+        <h2 class="consulta__titulo">Asignaturas que imparte</h2>
+        <div class="tabla-scroll">
+            <table class="asignaturas">
+                <thead>
+                    <tr>
+                        <th>Asignatura</th>
+                        <th>Semestre</th>
+                        <th>Horas</th>
+                        <th>Créditos</th>
+                    </tr>
+                </thead>
+                <tbody id="p-materias"></tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Total</td>
+                        <td class="num" id="p-total-horas">0</td>
+                        <td class="num" id="p-total-creditos">0</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</main>
+
+<main id="calendario" class="contenido">
+    <header class="seccion__header">
+        <h1>Calendario escolar</h1>
+        <p>Septiembre 2026 – agosto 2027</p>
+    </header>
+
+    <div class="tarjeta">
+        <div class="calendario__acciones">
+            <a class="btn btn--enlace" href="assets/calendario-escolar.pdf" target="_blank" rel="noopener">Abrir PDF</a>
+            <a class="btn btn--enlace btn--sec" href="assets/calendario-escolar.pdf" download="Calendario_Escolar_2026-2027.pdf">Descargar</a>
+        </div>
+
+        <a href="assets/calendario-escolar.pdf" target="_blank" rel="noopener" title="Abrir el PDF en otra pestaña">
+            <img class="calendario__img" src="assets/calendario-escolar.png"
+                 alt="Calendario escolar septiembre 2026 a agosto 2027">
+        </a>
+    </div>
+</main>
+
+<main id="documentos" class="contenido">
+    <header class="seccion__header no-imprimir">
+        <h1>Documentos</h1>
+        <p>Carga de horario del profesor, lista para imprimir o guardar como PDF.</p>
+    </header>
+
+    <div class="tarjeta no-imprimir">
+        <div class="calendario__acciones">
+            <button id="d-imprimir" class="btn btn--enlace" type="button">Imprimir / Guardar PDF</button>
+        </div>
+        <p class="perfil__sub">Para descargarlo, en la ventana de impresión elige <strong>Guardar como PDF</strong> como destino.</p>
+        <p id="d-vacio" class="vacio">Aún no has seleccionado horas en "Subir". Ve a Horarios → Subir para armar tu horario.</p>
+    </div>
+
+    <div id="doc-hojas"></div>
+</main>
+
+    <div id="zona-impresion"></div>
 
     <script src="main.js"></script>
+    <script src="horario.js"></script>
 </body>
 </html>
