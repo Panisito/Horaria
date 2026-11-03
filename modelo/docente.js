@@ -1,9 +1,11 @@
 class Docente {
-    constructor(carrera, especialidad, idTipoPlaza, idUsuario) {
-        this.carrera = carrera;
+    constructor(especialidad, gradoAcademico, area, idUsuario, idTipoPlaza, idCarrera) {
         this.especialidad = especialidad;
-        this.idTipoPlaza = idTipoPlaza;
+        this.gradoAcademico = gradoAcademico;
+        this.area = area;
         this.idUsuario = idUsuario;
+        this.idTipoPlaza = idTipoPlaza;
+        this.idCarrera = idCarrera;
     }
 }
 

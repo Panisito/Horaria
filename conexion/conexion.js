@@ -9,7 +9,7 @@ class Conexion {
         this.conexion = await mysql.createConnection({
             host: 'localhost',
             user: 'root',
-            password: 'SuContraseniaDeMySQL',
+            password: 'SuContraseniaMySQL',
             database: 'escuela_FIS'
         });
 
@@ -26,3 +26,5 @@ class Conexion {
 }
 
 module.exports = Conexion;
+
+
